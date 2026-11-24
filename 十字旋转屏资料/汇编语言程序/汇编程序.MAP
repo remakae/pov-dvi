@@ -1,0 +1,144 @@
+LX51 LINKER/LOCATER V3.58                                                               08/09/2014  15:23:46  PAGE 1
+
+
+LX51 LINKER/LOCATER V3.58, INVOKED BY:
+C:\KEIL\C51\BIN\LX51.EXE »ã±à³ÌÐò.obj TO »ã±à³ÌÐò CLASSES (CODE (C:0X0-C:0X1FFF), ECODE (C:0X0-C:0X1FFF), HCONST (C:0X0-
+>> C:0X1FFF))
+
+
+CPU MODE:     8051 MODE
+
+
+INPUT MODULES INCLUDED:
+  »ã±à³ÌÐò.obj (»ã__³__ò)
+         COMMENT TYPE 1: A51 / ASM51 Assembler
+
+
+ACTIVE MEMORY CLASSES OF MODULE:  »ã±à³ÌÐò (»ã__³__ò)
+
+BASE        START       END         USED      MEMORY CLASS
+==========================================================
+C:000000H   C:000000H   C:001FFFH   000524H   CODE
+C:000000H   C:000000H   C:001FFFH             ECODE
+B00:0000H   C:000000H   C:001FFFH             HCONST
+I:000000H   I:000000H   I:00007FH   000008H   DATA
+
+
+MEMORY MAP OF MODULE:  »ã±à³ÌÐò (»ã__³__ò)
+
+
+START     STOP      LENGTH    ALIGN  RELOC    MEMORY CLASS   SEGMENT NAME
+=========================================================================
+
+* * * * * * * * * * *   D A T A   M E M O R Y   * * * * * * * * * * * * *
+000000H   000007H   000008H   ---    AT..     DATA           "REG BANK 0"
+
+* * * * * * * * * * *   C O D E   M E M O R Y   * * * * * * * * * * * * *
+000000H   000523H   000524H   ---    OFFS..   CODE           ?CO?»ã__³__ò?0
+
+
+
+PUBLIC SYMBOLS OF MODULE:  »ã±à³ÌÐò (»ã__³__ò)
+
+
+      VALUE       CLASS    TYPE      PUBLIC SYMBOL NAME
+      =================================================
+      00000000H   NUMBER   ---       ?C?CODESEG
+      00000000H   NUMBER   ---       ?C?XDATASEG
+
+
+
+SYMBOL TABLE OF MODULE:  »ã±à³ÌÐò (»ã__³__ò)
+
+      VALUE       REP       CLASS    TYPE      SYMBOL NAME
+      ====================================================
+      ---         MODULE    ---      ---       »ã__³__ò
+      000000E0H   SYMBOL    DATA     ---       ACC
+      000000F0H   SYMBOL    DATA     ---       B
+      00000006H   SYMBOL    CODE     ---       CFG
+      00000200H   SYMBOL    CODE     ---       CON
+      00000083H   SYMBOL    DATA     ---       DPH
+      00000053H   SYMBOL    CODE     ---       E0D
+      00000021H   SYMBOL    CODE     ---       GR0
+      00000025H   SYMBOL    CODE     ---       GR00
+      00000055H   SYMBOL    CODE     ---       HBIT
+      0000000BH   SYMBOL    CODE     ---       MM
+      00000009H   SYMBOL    CODE     ---       MM00
+      0000003BH   SYMBOL    CODE     ---       MMM
+      00000080H   SYMBOL    DATA     ---       P0
+      00000090H   SYMBOL    DATA     ---       P1
+LX51 LINKER/LOCATER V3.58                                                             08/09/2014  15:23:46  PAGE 2
+
+
+      000000A0H   SYMBOL    DATA     ---       P2
+      000000B0H   SYMBOL    DATA     ---       P3
+      000002F4H   SYMBOL    CODE     ---       TAB
+      000004D4H   SYMBOL    CODE     ---       TAB1
+      00000524H   SYMBOL    CODE     ---       TAB2
+      01000000H   LINE      CODE     ---       #2
+      01000003H   LINE      CODE     ---       #4
+      01000005H   LINE      CODE     ---       #5
+      01000006H   LINE      CODE     ---       #9
+      01000009H   LINE      CODE     ---       #10
+      0100000BH   LINE      CODE     ---       #11
+      0100000CH   LINE      CODE     ---       #12
+      0100000DH   LINE      CODE     ---       #13
+      0100000EH   LINE      CODE     ---       #14
+      01000010H   LINE      CODE     ---       #16
+      01000011H   LINE      CODE     ---       #17
+      01000012H   LINE      CODE     ---       #18
+      01000013H   LINE      CODE     ---       #19
+      01000014H   LINE      CODE     ---       #20
+      01000015H   LINE      CODE     ---       #22
+      01000016H   LINE      CODE     ---       #23
+      01000018H   LINE      CODE     ---       #24
+      0100001BH   LINE      CODE     ---       #25
+      0100001DH   LINE      CODE     ---       #26
+      0100001FH   LINE      CODE     ---       #27
+      01000021H   LINE      CODE     ---       #28
+      01000023H   LINE      CODE     ---       #29
+      01000025H   LINE      CODE     ---       #31
+      01000027H   LINE      CODE     ---       #32
+      01000029H   LINE      CODE     ---       #34
+      0100002CH   LINE      CODE     ---       #35
+      0100002FH   LINE      CODE     ---       #36
+      01000032H   LINE      CODE     ---       #37
+      01000035H   LINE      CODE     ---       #38
+      01000038H   LINE      CODE     ---       #39
+      0100003BH   LINE      CODE     ---       #40
+      0100003EH   LINE      CODE     ---       #41
+      01000041H   LINE      CODE     ---       #42
+      01000043H   LINE      CODE     ---       #43
+      01000045H   LINE      CODE     ---       #44
+      01000046H   LINE      CODE     ---       #45
+      01000047H   LINE      CODE     ---       #46
+      01000048H   LINE      CODE     ---       #47
+      01000049H   LINE      CODE     ---       #48
+      0100004BH   LINE      CODE     ---       #49
+      0100004EH   LINE      CODE     ---       #50
+      01000051H   LINE      CODE     ---       #51
+      01000053H   LINE      CODE     ---       #52
+      01000055H   LINE      CODE     ---       #54
+      01000057H   LINE      CODE     ---       #55
+      01000059H   LINE      CODE     ---       #56
+      0100005BH   LINE      CODE     ---       #57
+      0100005DH   LINE      CODE     ---       #58
+      0100005FH   LINE      CODE     ---       #59
+      01000061H   LINE      CODE     ---       #60
+      01000063H   LINE      CODE     ---       #61
+      01000065H   LINE      CODE     ---       #62
+      01000067H   LINE      CODE     ---       #63
+      01000069H   LINE      CODE     ---       #64
+      0100006BH   LINE      CODE     ---       #65
+      0100006DH   LINE      CODE     ---       #66
+      0100006FH   LINE      CODE     ---       #67
+      01000071H   LINE      CODE     ---       #68
+      01000073H   LINE      CODE     ---       #69
+      01000075H   LINE      CODE     ---       #70
+LX51 LINKER/LOCATER V3.58                                                             08/09/2014  15:23:46  PAGE 3
+
+
+      01000077H   LINE      CODE     ---       #71
+
+Program Size: data=8.0 xdata=0 const=0 code=1316
+LX51 RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

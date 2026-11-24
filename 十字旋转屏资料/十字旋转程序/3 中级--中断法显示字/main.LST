@@ -1,0 +1,120 @@
+C51 COMPILER V9.00   MAIN                                                                  08/09/2014 09:27:49 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "STC89C51RC.H"
+   2          
+   3          //初始化外部中断INT2，熄灭所有LED
+   4          void init()
+   5          {
+   6   1          //-----------INT2中断初始化-------------------------------------------------   
+   7   1              EA = 1;          //中断使能
+   8   1              IT2 = 0;    //低电平触发中断  
+   9   1              EX2 = 1;        //外部中断2使能
+  10   1              P1=0XFF;
+  11   1              P2=0XFF;
+  12   1              P0=0XFF;
+  13   1              P3=0XFF; 
+  14   1      
+  15   1      }
+  16          
+  17          
+  18          
+  19          
+  20           
+  21          bit BIT_timeout=0;
+  22          unsigned int i=0,j=0,k=0;
+  23          
+  24          /*********延时子程序**********/
+  25          /*****n（us）延时子程序*****/
+  26          void DelayUs(unsigned int N)
+  27          {
+  28   1          unsigned int x ;
+  29   1          for(x=0;x<=N;x++);
+  30   1      }
+  31          
+  32          /*********中断子程序**********/
+  33          void int2() interrupt 6 //使用外部中断2
+  34          {
+  35   1              BIT_timeout=1; //起点标志位     
+  36   1      }
+  37          
+  38          
+  39          
+  40          #define ucNumRows 176 //定义一周显示字个数 一个字16列 160/16=10个字
+  41          extern unsigned char code zimo[];
+  42          
+  43          
+  44          //主要函数，从zimo[]里面读取数据发送到P0-P3端口推动LED显
+  45          void main_loop(void)
+  46          {
+  47   1               
+  48   1              if(BIT_timeout) //起点判断
+  49   1              {                       
+  50   2                      BIT_timeout=0; //清零
+  51   2                      
+  52   2                      j++;                                       
+  53   2              if( j>672 )//显示完文字后 循环； j=16*需要显示的字数     这里大概有120个字符 所以120*16=1920
+  54   2              {
+  55   3                  j=0 ;
+C51 COMPILER V9.00   MAIN                                                                  08/09/2014 09:27:49 PAGE 2   
+
+  56   3                              k^=1;    //变量K控制哪一边LED发光。一边显示完所有字后换另外一边
+  57   3              }            
+  58   2              for(i=ucNumRows+j;i>j;i--)  //立体显示176列 数据   176/16=11个字
+  59   2              {                               
+  60   3                      if(k){
+  61   4                                      P1=zimo[i*2];   //送数据低位显示
+  62   4                                      P3=zimo[i*2+1];//送数据高位显示 
+  63   4                              }
+  64   3                              else
+  65   3                              {
+  66   4                                      P2=zimo[i*2];   //送数据低位显示
+  67   4                                      P0=zimo[i*2+1];//送数据高位显示         
+  68   4                              }                       
+  69   3                              DelayUs(20);
+  70   3                              P0=P1=P2=P3=0XFF;                                                       
+  71   3                if(BIT_timeout)//这里如果没有显示完一圈的数据 回到起点了 
+  72   3                                        //直接跳出 就不会出现头吃尾的现象 而且盲点很小
+  73   3                         {
+  74   4                                      return;
+  75   4                         }
+  76   3                      }          
+  77   2              }
+  78   1      }
+  79          
+  80          
+  81          /*********************************************************************************************************
+  82          ** 函数名称: main
+  83          ** 功能描述: 主函数，用户程序从这里执行
+  84          ***************************************************************************************************/
+  85          
+  86          void main(void)
+  87          {
+  88   1          init();
+  89   1              while(1)
+  90   1             main_loop();
+  91   1      }
+  92          
+  93          
+  94          
+  95          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    218    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      6    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      1    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

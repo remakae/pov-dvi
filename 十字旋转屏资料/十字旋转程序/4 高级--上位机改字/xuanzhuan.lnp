@@ -1,0 +1,5 @@
+"main.obj",
+"EEP.obj",
+"uart.obj" 
+TO "xuanzhuan" 
+RAMSIZE(256) 
